@@ -69,14 +69,19 @@ sumP(p, [10; 3; 29; 7]);; // = 46
 
 // Paper & Pencil
 // 4.16 Find the types
-// int * int list -> int list
+// Found in notes under Type Inference
 let rec q = function
 | (x, []) -> []
 | (x, y::ys) -> (x+y)::q(x-1, ys);;
 
 q(5, [1; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 10; 7;]);;
 
-
 let rec g = function
 | [] -> []
 | (x,y)::s -> (x,y)::(y,x)::g s;;
+
+let rec h = function
+| [] -> []
+| x::xs -> x::(h xs)@[x];;
+
+//
